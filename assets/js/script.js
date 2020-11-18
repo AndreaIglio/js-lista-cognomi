@@ -3,58 +3,89 @@
 var userLastName = prompt('What\'s your last name?').toUpperCase();
 
 
-// INSERIRE COGNOME IN UN ARRAY
+  if (!userLastName || !userLastName.match(/^[a-z]+$/i)) {
 
 
-// creo array list
 
-var lastNameList = ['AJEJE', 'BRAZORF', 'BRAMBILLA', 'FUMAGALLI'];
-
-lastNameList.push(userLastName);
+    alert("Only letters are allowed");
 
 
-// STAMPA ARRAY ORDINATA ALFABETICAMENTE
-
-lastNameList.sort();
 
 
-// SCRIVI LA POSIZIONE DEL COGNOME NELLA LISTA
+  }
 
+  else {
+    // INSERIRE COGNOME IN UN ARRAY
 
-// var i = 0;
+    // creo array list
 
-// while (i < lastNameList.length) {
+    var lastNameList = ["AJEJE", "BRAZORF", "BRAMBILLA", "FUMAGALLI"];
 
-//     var posizione = document.getElementById('posizione');
-//     console.log(lastNameList[i]);
-//     i++;
-// }
+    lastNameList.push(userLastName);
+
+    // STAMPA ARRAY ORDINATA ALFABETICAMENTE
+
+    lastNameList.sort();
+
+    // SCRIVI LA POSIZIONE DEL COGNOME NELLA LISTA
+
+    // SOLUZIONE USANDO IL WHILE LOOP
+
+    var i = 0;
+    var result = false;
+
+    while (i < lastNameList.length) {
+      var ul_list = document.getElementById("ul_list").innerHTML;
+      document.getElementById("ul_list").innerHTML =
+        ul_list + "<li>" + lastNameList[i] + "</li>";
+
+      console.log(lastNameList[i]);
+
+      if (userLastName == lastNameList[i]) {
+        result = true;
+      }
+
+      i++;
+    }
+
+    if (result) {
+      var posizione = document.getElementById("posizione");
+      posizione.innerHTML =
+        "Your lastname position within the list is " +
+        (lastNameList.indexOf(userLastName) + 1);
+    }
+  }
+
 
 
 // SOLUZIONE USANDO IL FOR LOOP
 
-var result = false;
+// var result = false;
 
-for (var i= 0; i < lastNameList.length; i++) {
+// for (var i= 0; i < lastNameList.length; i++) {
 
-    var ul_list = document.getElementById("ul_list").innerHTML;
-    document.getElementById("ul_list").innerHTML = ul_list + "<li>" + lastNameList[i] + "</li>";
+// PRIMO METODO
+
+    // var ul_list = document.getElementById("ul_list").innerHTML;
+    // document.getElementById("ul_list").innerHTML = ul_list + "<li>" + lastNameList[i] + "</li>";
+
+// SECONDO METODO
 
     // var ul_list = document.getElementById('ul_list');
     // ul_list.innerHTML += "<li>" + lastNameList[i] + "</li>";
 
-    console.log(lastNameList[i]);
+//     console.log(lastNameList[i]);
     
 
-    if (userLastName == lastNameList[i]){
-        result = true;
-    }
+//     if (userLastName == lastNameList[i]){
+//         result = true;
+//     }
 
-}
+// }
 
 
-if (result) {
-    var posizione = document.getElementById("posizione");
-    posizione.innerHTML =
-    "Your lastname position within the list is " +(lastNameList.indexOf(userLastName) + 1);
-}
+// if (result) {
+//     var posizione = document.getElementById("posizione");
+//     posizione.innerHTML =
+//     "Your lastname position within the list is " +(lastNameList.indexOf(userLastName) + 1);
+// }
