@@ -8,6 +8,11 @@ var userLastName = prompt('What\'s your last name?');
 
 // creo array list
 
+var lastNameList = ['Ajeje', 'Brazorf', 'Brambilla', 'Fumagalli'];
+
+lastNameList.push(userLastName);
+console.log(lastNameList);
+
 
 // STAMPA ARRAY ORDINATA ALFABETICAMENTE
 
