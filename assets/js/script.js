@@ -1,4 +1,16 @@
-// Variabili con valore
+// CHIEDERE UTENTE IL COGNOME
+
+var userLastName = prompt('What\'s your last name?');
 
 
-// Variabili senza valore
+// INSERIRE COGNOME IN UN ARRAY
+
+
+// creo array list
+
+
+// STAMPA ARRAY ORDINATA ALFABETICAMENTE
+
+
+
+// SCRIVI LA POSIZIONE DEL COGNOME NELLA LISTA
